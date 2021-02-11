@@ -16,7 +16,15 @@ class AddressAdmin(admin.ModelAdmin):
 
 
 class InstitutionAdmin(admin.ModelAdmin):
-    list_display = ('name', 'initials', 'get_modalities', 'description', 'address', 'contact', 'cnpj', 'created_at', 'updated_at')
+    list_display = ('name',
+                    'initials',
+                    'get_modalities',
+                    'description',
+                    'address',
+                    'contact',
+                    'cnpj',
+                    'created_at',
+                    'updated_at')
     
     def get_modalities(self, obj):
         return ", ".join([str(p) for p in obj.modality.all()])
